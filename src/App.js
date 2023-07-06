@@ -29,6 +29,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  };
+
   return (
     <div>
       {/* Instead of passing several attributes you can pass one attribute: */}
@@ -60,7 +65,7 @@ const App = () => {
       /> */}
 
       {/* New Expenses.js component changes */}
-      <NewExpense />
+      <NewExpense onAddExpense = {addExpenseHandler} />
       <Expenses items={expenses} />
 
       {/* we could have directly forwared the expenses array into expenses component but it's not the task of the assignment so instead we are forwarding it through props and items props we are extracting it with that prop inside of the expenses component and that should render all the expenses*/}
