@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
@@ -14,6 +14,7 @@ and then in the return section you can put instead of
 {props.title} then directly {title} and etc.
 */
 
+//this component is a state less component
 const ExpenseItem = (props) => {
   //adding some JS code
   //we used props so no usage for these anymore
@@ -30,15 +31,15 @@ const ExpenseItem = (props) => {
   //function clickHandler() {}
   // Usestate hook always return an array with two elements the current state value and the function which updates that
   
-  const [title, setTitle] = useState(props.title); //one of the important React Hook
+  // const [title, setTitle] = useState(props.title); //one of the important React Hook
 
   // let title = props.title;
 
-  const clickHandler = () => {
-    setTitle('Updated!');
-    // title = "Updated!";
-    console.log(title);
-  };
+  // const clickHandler = () => {
+  //   setTitle('Updated!');
+  //   // title = "Updated!";
+  //   console.log(title);
+  // };
 
   return (
     <Card className="expense-item">
@@ -52,11 +53,12 @@ const ExpenseItem = (props) => {
       {/* instead we output this expense date component */}
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
       {/* Onclick which is an event handler prop wants a function as a value a function passed as a value for onclick and all these on props which then is executed when that event occurs */}
-      <button onClick={clickHandler}>Change Title</button>
+      {/* <button onClick={clickHandler}>Change Title</button> */}
+
     </Card>
   );
 };
@@ -120,3 +122,5 @@ so that it's not executed when this is evaluated
 
 but when the click occurs, which is exactly what we want.
 */
+
+// Note: dumb is state less components and smart is state full components

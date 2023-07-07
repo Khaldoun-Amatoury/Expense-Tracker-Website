@@ -1,12 +1,23 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
 import ExpensesFilter from "./ExpensesFilter";
 
 const Expenses = (props) => {
+  const [filteredYear, setFilteredYear] = useState("2022");
+  //it is redundant change it and use derived and computed state
+  // const [filterInfoText, SetFilterInfoText] = useState('2019, 2020 & 2022');
 
-  const [filteredYear, setFilteredYear] = useState('2022');
+  // let filterInfoText = "2019, 2020 & 2021";
+
+  // if (filteredYear === "2019") {
+  //   filterInfoText = "2020, 2021 & 2022";
+  // }else if (filteredYear === '2020'){
+  //   filterInfoText = "2019, 2021 & 2022";
+  // } else {
+  //   filterInfoText = "2019, 2020 & 2022";
+  // }
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -16,7 +27,11 @@ const Expenses = (props) => {
     <div>
       <Card className="expenses">
         {/* here we changed props.expenses to props.items just that expenses is a word we used too much just to change a little */}
-        <ExpensesFilter selected={filteredYear} onChangeFilter = {filterChangeHandler} />
+        <ExpensesFilter
+          selected={filteredYear}
+          onChangeFilter={filterChangeHandler}
+        />
+        {/* <p>Data for years {filterInfoText} is hidden</p> */}
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
