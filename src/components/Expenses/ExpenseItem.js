@@ -42,24 +42,26 @@ const ExpenseItem = (props) => {
   // };
 
   return (
-    <Card className="expense-item">
-      {/* we'll be returning the date div in expense date component */}
-      {/* <div>
-        <div>{month}</div>
-        <div>{year}</div>
-        <div>{day}</div>
-      </div> */}
-      {/* <div>{props.date.toISOString()}</div> */}
-      {/* instead we output this expense date component */}
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-      {/* Onclick which is an event handler prop wants a function as a value a function passed as a value for onclick and all these on props which then is executed when that event occurs */}
-      {/* <button onClick={clickHandler}>Change Title</button> */}
+    <li>
+      <Card className="expense-item">
+        {/* we'll be returning the date div in expense date component */}
+        {/* <div>
+          <div>{month}</div>
+          <div>{year}</div>
+          <div>{day}</div>
+        </div> */}
+        {/* <div>{props.date.toISOString()}</div> */}
+        {/* instead we output this expense date component */}
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+        {/* Onclick which is an event handler prop wants a function as a value a function passed as a value for onclick and all these on props which then is executed when that event occurs */}
+        {/* <button onClick={clickHandler}>Change Title</button> */}
 
-    </Card>
+      </Card>
+    </li>
   );
 };
 
