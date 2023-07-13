@@ -83,22 +83,25 @@ const ExpenseForm = (props) => {
     //comunicating up to the parent component which is newexpenses.js where we can call a function in the new expense component and we can pass data as a parameter
     //so here when we call on save expense data in the expense form, I can pass the expense data which I generate here as an argument and that's the value which we'll receive as a parameter here in new expenses which is enteredExpenseData in newexpense
     //The trick really is that we pass around a pointer at a function  <ExpenseForm onSaveExpenseData = {saveExpenseDataHandler}/>
-    
+
     props.onSaveExpenseData(expenseData);
-    setEnteredTitle('');
-    setEnteredAmount('');
-    setEnteredDate('');
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
+
+
 
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input 
-          type="text"
-          value = {enteredTitle}
-          onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -106,7 +109,7 @@ const ExpenseForm = (props) => {
             type="number"
             min="0.01"
             step="0.01"
-            value = {enteredAmount}
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -116,12 +119,13 @@ const ExpenseForm = (props) => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
-            value = {enteredDate}
+            value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={props.onCancel}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
