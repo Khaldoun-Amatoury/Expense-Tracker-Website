@@ -77,7 +77,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     //comunicating up to the parent component which is newexpenses.js where we can call a function in the new expense component and we can pass data as a parameter
