@@ -4,14 +4,14 @@ This is a web application for tracking expenses built using React. It utilizes c
 
 ## Features
 
-- Add, edit, and delete expenses
-- Categorize expenses by type
-- View expense history and summaries
-- Filter expenses based on date or category
+- Add expenses
+- View expense history
+- Filter expenses based on year
+- Track your highest spending month or lowest spending month with the changing chartbars
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/expense-tracker.git`
+1. Clone the repository: `git clone (https://github.com/Khaldoun-Amatoury/Expense-Tracker-Website)`
 2. Navigate to the project directory: `cd expense-tracker`
 3. Install dependencies: `npm install`
 
